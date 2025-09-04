@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MHZ Company — Contato</title>
+  <meta name="description" content="Site simples e rápido com formulário de contato para a MHZ Company." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --mhz: #F8D02F; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+  <!-- Header -->
+  <header class="border-b border-neutral-800/60 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60 sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl" style="background: var(--mhz);"></div>
+        <div class="leading-tight">
+          <p class="text-sm text-neutral-400">IMERSÃO DE CONTEÚDO</p>
+          <h1 class="font-semibold tracking-tight">MHZ COMPANY</h1>
+        </div>
+      </div>
+      <a href="#contato" class="px-4 py-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition">Fale conosco</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-semibold leading-tight">O conhecimento que falta para você dar o próximo passo ⚡</h2>
+        <p class="mt-3 text-neutral-300">Cadastre-se e tenha acesso a conteúdos<span class="font-medium"> exclusivos</span> antes do <span class="font-mono">lançamento,</span> fique ligado e nao perca nada!</p>
+        <ul class="mt-6 space-y-2 text-neutral-300">
+          <li class="flex gap-3"><span class="text-neutral-500">•</span> ✔ Certificado</li>
+          <li class="flex gap-3"><span class="text-neutral-500">•</span> ✔ Aulas práticas e fáceis de aplicar</li>
+          <li class="flex gap-3"><span class="text-neutral-500">•</span> ✔ Suporte exclusivo durante o curso</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6">
+        <!--
+          IMPLEMENTAÇÃO DO FORMULÁRIO
+          Este formulário usa Formspree (gratuito e simples). Passos:
+          1) Crie sua endpoint em https://formspree.io/forms e copie a URL do formulário.
+          2) Substitua o valor de FORM_ENDPOINT abaixo pela sua URL.
+          3) (Opcional) Habilite reCAPTCHA no painel do Formspree e adicione data-captcha="true" no <form>.
+        -->
+
+        <form id="contato" action="#" method="POST" novalidate class="space-y-4" data-endpoint="https://formspree.io/f/xvgbvrno">
+          <input type="hidden" name="_subject" value="Novo contato do site MHZ" />
+          <input type="hidden" name="_to" value="contatomhzb@gmail.com" />
+          <input type="text" name="_honeypot" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+          <div>
+            <label class="block text-sm mb-1" for="nome">Nome *</label>
+            <input id="nome" name="nome" required autocomplete="name" class="w-full px-4 py-2 rounded-xl bg-neutral-800/70 border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-yellow-400/60" placeholder="Seu nome" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-1" for="email">E-mail *</label>
+              <input id="email" type="email" name="email" required autocomplete="email" class="w-full px-4 py-2 rounded-xl bg-neutral-800/70 border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-yellow-400/60" placeholder="seu@email.com" />
+            </div>
+            <div>
+              <label class="block text-sm mb-1" for="telefone">Telefone/Whats *</label>
+              <input id="telefone" name="telefone" required inputmode="tel" autocomplete="tel" class="w-full px-4 py-2 rounded-xl bg-neutral-800/70 border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-yellow-400/60" placeholder="(44) 9 9999-9999" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1" for="empresa">Sua empresa ou Instagram dela:</label>
+            <input id="empresa" name="empresa" class="w-full px-4 py-2 rounded-xl bg-neutral-800/70 border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-yellow-400/60" placeholder="Nome da empresa" />
+          </div>
+          <div>
+            <label class="block text-sm mb-1" for="interesse">Qual seu nível de interesse? *</label>
+              <select id="interesse" name="interesse" required
+               class="w-full px-4 py-2 rounded-xl bg-neutral-800/70 border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-yellow-400/60">
+                <option value="">Selecione...</option>
+                <option value="iniciante">Quero aprender para trabalhar na área</option>
+                <option value="intermediario">Ja trabalho na área e quero me aperfeiçoar</option>
+                 <option value="avancado">Preciso de treinamento para os meus colaboradores</option>
+                 <option value="avancado">Preciso aprender para alavancar meu negócio</option>
+             </select>
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1" for="mensagem">Mensagem *</label>
+            <textarea id="mensagem" name="mensagem" required rows="4" class="w-full px-4 py-2 rounded-xl bg-neutral-800/70 border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-yellow-400/60" placeholder="Como podemos ajudar?"></textarea>
+          </div>
+
+          <button id="btnEnviar" class="w-full py-2.5 rounded-xl bg-[color:var(--mhz)] text-neutral-900 font-semibold hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed">
+            Enviar
+          </button>
+
+          <p id="status" class="text-sm mt-2 hidden"></p>
+        </form>
+      </div>
+    </div>
+
+    
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-800/60">
+    <div class="max-w-4xl mx-auto px-4 py-8 text-sm text-neutral-400 flex flex-col md:flex-row items-center gap-2 justify-between">
+      <p>© <span id="ano"></span> MHZ Company — Mkt & Tecnologia</p>
+      <p>Feito para ser leve, rápido e sem travar.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Preenche ano
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Submissão assíncrona (fetch) para evitar recarregar página
+    const form = document.getElementById('contato');
+    const statusEl = document.getElementById('status');
+    const btn = document.getElementById('btnEnviar');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validação simples de required
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const endpoint = form.dataset.endpoint.trim();
+      if (!endpoint || endpoint.includes('FORM_ENDPOINT_AQUI')) {
+        alert('⚠️ Configure o endpoint do Formspree em data-endpoint no <form> antes de publicar.');
+        return;
+      }
+
+      btn.disabled = true;
+      statusEl.classList.remove('hidden');
+      statusEl.textContent = 'Enviando…';
+      statusEl.className = 'text-sm mt-2 text-neutral-300';
+
+      try {
+        const formData = new FormData(form);
+        // Inclui um carimbo de data/hora útil para controle
+        formData.append('enviado_em', new Date().toISOString());
+
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+
+        if (res.ok) {
+          form.reset();
+          statusEl.textContent = '✅ Recebemos sua mensagem! Em breve entraremos em contato.';
+          statusEl.className = 'text-sm mt-2 text-green-400';
+        } else {
+          const data = await res.json().catch(() => ({}));
+          const msg = (data && data.errors && data.errors[0] && data.errors[0].message) || 'Erro ao enviar. Tente novamente.';
+          statusEl.textContent = '❌ ' + msg;
+          statusEl.className = 'text-sm mt-2 text-red-400';
+        }
+      } catch (err) {
+        statusEl.textContent = '❌ Falha de rede. Verifique sua conexão e tente novamente.';
+        statusEl.className = 'text-sm mt-2 text-red-400';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
